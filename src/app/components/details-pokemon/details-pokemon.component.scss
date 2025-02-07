@@ -1,0 +1,137 @@
+$dark-color: #1D1616;
+$dark-red: #8E1616;
+$medium-red: #D84040;
+$dark-grey: #929292;
+$light-grey: #EEEEEE;
+
+
+h1 {
+    color: $dark-red;
+}
+
+.details-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-details-container {
+    margin: 2rem;
+    width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-infos-container {
+    align-self: self-start;
+}
+
+.types-container {
+    padding: 1rem;
+}
+
+.type-pokemon {
+    color: rgb(255, 255, 255);
+    width: 5rem;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 8px;
+
+}
+
+.grass {
+    background-color: rgb(68, 180, 68);
+
+}
+
+.poison {
+    background-color: rgb(134, 46, 161);
+
+}
+
+.fire {
+    background-color: rgb(214, 54, 49);
+}
+
+.water {
+    background-color: rgb(71, 183, 202);
+}
+
+.bug {
+    background-color: rgb(157, 170, 39);
+}
+
+.flying {
+    background-color: rgb(155, 196, 196);
+}
+
+.normal {
+    background-color: rgb(194, 193, 193);
+}
+
+.electric {
+    background-color: rgb(197, 187, 40);
+}
+
+.dragon {
+    background-color: rgb(117, 82, 184);
+}
+
+.fairy {
+    background-color: rgb(230, 116, 169);
+}
+
+.ghost {
+    background-color: rgb(79, 68, 180);
+}
+
+.psychic {
+    background-color: rgb(207, 71, 178);
+}
+
+.ground {
+    background-color: rgb(192, 191, 104);
+}
+
+.fighting {
+    background-color: #ad4b2e;
+}
+
+.steel {
+    background-color: #9c9797;
+}
+
+.rock {
+    background-color: #a18355;
+}
+
+.dark {
+    background-color: #6b6868;
+}
+
+span {
+    font-weight: bold;
+}
+
+.button-return {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background-color: $medium-red;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-return:hover {
+    background-color: #c53c3c;
+}

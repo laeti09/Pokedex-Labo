@@ -1,0 +1,33 @@
+<div class="search-page">
+    <h1>Recherche d'un Pokemon</h1>
+    <div class="input-container">
+        <div class="input-border">
+            <input type="text" [(ngModel)]="searchPokemon" (keyup)="search()" placeholder="Rechercher un pokemon...">
+        </div>
+        <img src="/images/pokeball-icon.png" alt="pokeball icon">
+    </div>
+    
+    
+        @if(searchPokemon !== ""){
+            <div class="list-search-pokemons" >
+                @for(pokemon of affichagePokemons; track pokemon.id){
+                    <button class="button-pokemon" (click)="goToPokemonDetails(pokemon.id)">
+                        <div class="pokemon-found">
+                            @if(pokemon.sprites.other['official-artwork'].front_default){
+                                <img class="pokemon-img" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
+                            }
+                            <p class="pokemon-name">{{pokemon.name | titlecase}}</p>
+                        </div>
+                    </button>
+                }
+            </div>
+        }
+    
+
+
+    @if(messageErreur){
+        <p class="error-message">{{messageErreur}}</p>
+    }
+
+</div>
+

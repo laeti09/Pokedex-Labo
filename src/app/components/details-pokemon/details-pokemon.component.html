@@ -1,0 +1,37 @@
+<div class="details-page">
+    @if(!messageErreur){
+        <div class="pokemon-details-container">
+            <h1>{{pokemon.name | titlecase}}</h1>
+            <div>
+                @if(pokemon.sprites.other.dream_world.front_default != null){
+                    <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                }
+                @else if(pokemon.sprites.other["official-artwork"].front_default != null){
+                    <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
+                }
+                @else{
+                    <img class="open-pokeball-img" src="images/open-pokeball.png" [alt]="pokemon.name">
+                }
+            </div>
+            
+            <div class="pokemon-infos-container">
+                <p><span>Taille :</span> {{pokemon.height | height}}</p>
+                <p><span>Poids :</span> {{pokemon.weight | weight}}</p>
+            </div>
+            
+            <div class="types-container">
+                @for(types of pokemon.types; track $index){
+                    <span [class]="types.type.name" class="type-pokemon">{{types.type.name | titlecase}}</span>
+                }
+            </div>
+    
+        </div>
+        
+        <button class="button-return" (click)="goBack()">Retour</button>
+    }
+    @else {
+        <p>messageErreur</p>
+    }
+</div>
+
+

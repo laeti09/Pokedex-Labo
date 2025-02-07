@@ -1,0 +1,47 @@
+@if(!messageErreur){
+    <h1>Liste des Pokemons</h1>
+
+    <div class="pokemons-container">
+        @for(pokemon of pokemons; track pokemon.id){
+            <button (click)="getDetailsPokemon(pokemon.id)" class="button-pokemon">
+            <div class="pokemon-container">
+
+                    <p class="name-pokemon">{{pokemon.name | titlecase}}</p>
+                    @if(pokemon.sprites.other.dream_world.front_default != null){
+                        <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                    }
+                    @else if(pokemon.sprites.other["official-artwork"].front_default != null){
+                        <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
+                    }
+                    @else {
+                        <img class="open-pokeball-img" src="images/open-pokeball.png" [alt]="pokemon.name">
+                    }
+                </div>
+            </button>
+        }
+    </div>
+    
+    <div class="pagination">
+        <button class="pagination-button" (click)="goToFirstPage()" [disabled]="currentPage === 1">
+            <img src="images/first-page.png" alt="first page icon">
+        </button>
+        <button class="pagination-button" (click)="previousPage()" [disabled]="currentPage === 1">
+            <img src="images/previous-page.png" alt="previous page icon">
+        </button>
+        <span>{{currentPage}}</span>
+        <button class="pagination-button" (click)="nextPage()" [disabled]="currentPage === pagesCount">
+            <img src="images/next-page.png" alt="next page icon">
+        </button>
+        <button class="pagination-button" (click)="goToLastPage()" [disabled]="currentPage === pagesCount">
+            <img src="images/last-page.png" alt="last page icon">
+        </button>
+    </div>
+   
+}
+@else {
+    <p>{{messageErreur}}</p>
+}
+
+
+
+

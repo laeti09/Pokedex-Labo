@@ -1,0 +1,32 @@
+$dark-color: #1D1616;
+$dark-red: #8E1616;
+$medium-red: #D84040;
+$dark-grey: #929292;
+$light-grey: #EEEEEE;
+
+.container-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h1 {
+    background-color: white;
+    color: $dark-red;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.container-logo {
+    padding: 50px;
+    background-color: white;
+    border-radius: 40px;
+    border: 1rem dashed $dark-red;
+}
+
+img {
+    height: 250px;
+    width: 600px;
+}
